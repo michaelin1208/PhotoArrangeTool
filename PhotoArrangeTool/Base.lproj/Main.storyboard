@@ -1,27 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <viewController id="BV1-FR-VrT" customClass="ARViewController" customModule="PhotoArrangeTool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N7A-Bm-pDt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62v-4g-ufm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qli-Xh-KfW">
+                                <rect key="frame" x="167" y="617" width="41" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="PSd-Ha-R84"/>
+                                    <constraint firstAttribute="height" constant="30" id="uad-JG-4Yq"/>
+                                </constraints>
+                                <state key="normal" title="Photo"/>
+                                <connections>
+                                    <action selector="photoBtnClicked:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Plg-sy-8Uk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="62v-4g-ufm" firstAttribute="top" secondItem="N7A-Bm-pDt" secondAttribute="top" id="7Dn-l6-ucb"/>
+                            <constraint firstItem="qli-Xh-KfW" firstAttribute="centerX" secondItem="N7A-Bm-pDt" secondAttribute="centerX" id="HFL-gD-Mcd"/>
+                            <constraint firstItem="62v-4g-ufm" firstAttribute="leading" secondItem="bkL-Ux-NPS" secondAttribute="leading" id="Rg8-aQ-drg"/>
+                            <constraint firstItem="62v-4g-ufm" firstAttribute="bottom" secondItem="bkL-Ux-NPS" secondAttribute="bottom" id="kXC-t1-JcI"/>
+                            <constraint firstItem="bkL-Ux-NPS" firstAttribute="bottom" secondItem="qli-Xh-KfW" secondAttribute="bottom" constant="20" id="o2l-t6-BxW"/>
+                            <constraint firstItem="62v-4g-ufm" firstAttribute="trailing" secondItem="bkL-Ux-NPS" secondAttribute="trailing" id="usp-jX-Lfc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bkL-Ux-NPS"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="sceneView" destination="62v-4g-ufm" id="Az4-9G-zfg"/>
+                        <segue destination="Fyq-BM-vay" kind="show" identifier="showPhotoEditViewControllerSegue" id="dLE-aK-P58"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-218" y="34"/>
+        </scene>
+        <!--Photo Edit View Controller-->
+        <scene sceneID="sCn-gF-eo9">
+            <objects>
+                <viewController id="Fyq-BM-vay" customClass="PhotoEditViewController" customModule="PhotoArrangeTool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="09T-LK-AJv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2HV-FU-9YT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2HV-FU-9YT" firstAttribute="top" secondItem="09T-LK-AJv" secondAttribute="top" id="1SR-vy-pvx"/>
+                            <constraint firstItem="2HV-FU-9YT" firstAttribute="trailing" secondItem="U8m-ih-ZeF" secondAttribute="trailing" id="8xK-oo-ES1"/>
+                            <constraint firstItem="2HV-FU-9YT" firstAttribute="leading" secondItem="U8m-ih-ZeF" secondAttribute="leading" id="Gkd-io-d41"/>
+                            <constraint firstItem="2HV-FU-9YT" firstAttribute="bottom" secondItem="U8m-ih-ZeF" secondAttribute="bottom" id="cAn-Hv-95s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U8m-ih-ZeF"/>
+                    </view>
+                    <connections>
+                        <outlet property="selectedImageView" destination="2HV-FU-9YT" id="fYr-7e-owI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCa-6O-W3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="681" y="34"/>
         </scene>
     </scenes>
 </document>
