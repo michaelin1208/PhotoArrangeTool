@@ -12,7 +12,6 @@ class PhotoEditViewController: UIViewController {
     @IBOutlet var selectedImageView: UIImageView!
     var selectedImage: UIImage?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selectedImageView.image = selectedImage

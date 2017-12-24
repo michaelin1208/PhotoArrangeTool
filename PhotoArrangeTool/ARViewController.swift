@@ -124,24 +124,25 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIImagePickerContro
         }
     }
     //MARK:- UIImagePickerControllerDelegate
-    func imagePickerController(_ picker:UIImagePickerController, didFinishPickingMediaWithInfo info: [String :Any]){
-        
-        let type:String = (info[UIImagePickerControllerMediaType]as!String)
-        //当选择的类型是图片
-        if type=="public.image"
-        {
-            picker.dismiss(animated: true, completion: {
-                self.selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
-                self.performSegue(withIdentifier: "showPhotoEditViewControllerSegue", sender: self)
-            })
-        }
-    }
-    func imagePickerControllerDidCancel(_ picker:UIImagePickerController){
-        picker.dismiss(animated:true, completion:nil)
-    }
+//    func imagePickerController(_ picker:UIImagePickerController, didFinishPickingMediaWithInfo info: [String :Any]){
+//
+//        let type:String = (info[UIImagePickerControllerMediaType]as!String)
+//        //当选择的类型是图片
+//        if type=="public.image"
+//        {
+//            picker.dismiss(animated: true, completion: {
+//                self.selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+//                self.performSegue(withIdentifier: "showPhotoEditViewControllerSegue", sender: self)
+//            })
+//        }
+//    }
+//    func imagePickerControllerDidCancel(_ picker:UIImagePickerController){
+//        picker.dismiss(animated:true, completion:nil)
+//    }
     @IBAction func photoBtnClicked(_ sender: AnyObject) {
-        present(self.imageAlertController, animated:true, completion: nil)
-//        performSegue(withIdentifier: "showPhotoEditViewControllerSegue", sender: self)
+//        present(self.imageAlertController, animated:true, completion: nil)
+        selectedImage = sceneView.snapshot()
+        performSegue(withIdentifier: "showPhotoEditViewControllerSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
