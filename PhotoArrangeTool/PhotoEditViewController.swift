@@ -16,6 +16,11 @@ class PhotoEditViewController: UIViewController {
         super.viewDidLoad()
         self.selectedImageView.image = selectedImage
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }

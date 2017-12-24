@@ -44,6 +44,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIImagePickerContro
 
         // Run the view's session
         sceneView.session.run(configuration)
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
