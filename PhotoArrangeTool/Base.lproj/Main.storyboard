@@ -46,7 +46,7 @@
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="62v-4g-ufm" id="Az4-9G-zfg"/>
-                        <segue destination="Fyq-BM-vay" kind="show" identifier="showPhotoEditViewControllerSegue" id="dLE-aK-P58"/>
+                        <segue destination="Fyq-BM-vay" kind="show" identifier="showPhotoEditViewControllerSegue" id="x8j-vo-KIX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -56,13 +56,14 @@
         <!--Photo Edit View Controller-->
         <scene sceneID="sCn-gF-eo9">
             <objects>
-                <viewController id="Fyq-BM-vay" customClass="PhotoEditViewController" customModule="PhotoArrangeTool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoEditViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fyq-BM-vay" customClass="PhotoEditViewController" customModule="PhotoArrangeTool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="09T-LK-AJv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2HV-FU-9YT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="0.15270443433643532" blue="0.010098323125176112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +76,7 @@
                         <viewLayoutGuide key="safeArea" id="U8m-ih-ZeF"/>
                     </view>
                     <connections>
-                        <outlet property="selectedImageView" destination="2HV-FU-9YT" id="fYr-7e-owI"/>
+                        <outlet property="selectedImageView" destination="2HV-FU-9YT" id="fPA-0h-J81"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCa-6O-W3H" userLabel="First Responder" sceneMemberID="firstResponder"/>

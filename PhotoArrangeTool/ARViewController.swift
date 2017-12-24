@@ -1,4 +1,4 @@
-//
+
 //  ARViewController.swift
 //  PhotoArrangeTool
 //
@@ -130,14 +130,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIImagePickerContro
         //当选择的类型是图片
         if type=="public.image"
         {
-            picker.dismiss(animated:true, completion:nil)
-//            let photoViewController = PhotoEditViewController()
-            selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
-            
-            self.performSegue(withIdentifier: "showPhotoEditViewControllerSegue", sender: self)
-            
-//            photoViewController.selectedImage = selectedImage;
-//            present(photoViewController, animated: true, completion: nil)
+            picker.dismiss(animated: true, completion: {
+                self.selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+                self.performSegue(withIdentifier: "showPhotoEditViewControllerSegue", sender: self)
+            })
         }
     }
     func imagePickerControllerDidCancel(_ picker:UIImagePickerController){
@@ -145,12 +141,15 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UIImagePickerContro
     }
     @IBAction func photoBtnClicked(_ sender: AnyObject) {
         present(self.imageAlertController, animated:true, completion: nil)
+//        performSegue(withIdentifier: "showPhotoEditViewControllerSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPhotoEditViewControllerSegue" {
-            let photoVC:PhotoEditViewController = segue.destination as! PhotoEditViewController;
-            photoVC.selectedImageView.image = selectedImage;
+            guard let photoVC:PhotoEditViewController = segue.destination as? PhotoEditViewController else {
+                return
+            }
+            photoVC.selectedImage = selectedImage;
         }
     }
 }
