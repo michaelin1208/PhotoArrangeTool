@@ -15,6 +15,7 @@ class PhotoEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selectedImageView.image = selectedImage
+        CGImage
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

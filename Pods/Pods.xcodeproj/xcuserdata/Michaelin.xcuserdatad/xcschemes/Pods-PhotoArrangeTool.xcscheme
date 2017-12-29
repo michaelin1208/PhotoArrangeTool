@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1FF5A7D82B614C128CEDDF44114EB062"
+               BlueprintIdentifier = "1948DDB9F1EF5A4A16A9EC219543DAE4"
                BuildableName = "Pods_PhotoArrangeTool.framework"
                BlueprintName = "Pods-PhotoArrangeTool"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1FF5A7D82B614C128CEDDF44114EB062"
+            BlueprintIdentifier = "1948DDB9F1EF5A4A16A9EC219543DAE4"
             BuildableName = "Pods_PhotoArrangeTool.framework"
             BlueprintName = "Pods-PhotoArrangeTool"
             ReferencedContainer = "container:Pods.xcodeproj">
